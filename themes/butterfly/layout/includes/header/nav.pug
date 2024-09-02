@@ -1,0 +1,22 @@
+nav#nav
+  span#blog-info
+    a(href=url_for('/') title=config.title)
+      if theme.nav.logo
+        img.site-icon(src=url_for(theme.nav.logo) alt='Logo')
+      if theme.nav.display_title
+        span.site-name=config.title
+
+  #menus
+    if (theme.search.use)
+      #search-button
+        span.site-page.social-icon.search
+          i.fas.fa-search.fa-fw
+          span=' '+_p('search.title')
+    if theme.menu
+      !=partial('includes/header/menu_item', {}, {cache: true})
+
+      #toggle-menu
+        span.site-page
+          i.fas.fa-bars.fa-fw
+
+
