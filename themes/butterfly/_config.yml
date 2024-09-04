@@ -1083,3 +1083,7 @@ CDN:
     # valine:
     # waline_css:
     # waline_js:
+
+# 看板娘
+live2d:
+  enable: true
