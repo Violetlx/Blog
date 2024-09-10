@@ -19,9 +19,9 @@ hexo.extend.filter.register('before_generate', () => {
       fullpage: false
     },
     social: null,
-    favicon: '/img/favicon.png',
+    favicon: '/VsCode/favicon.png',
     avatar: {
-      img: '/img/butterfly-icon.png',
+      img: '/VsCode/butterfly-icon.png',
       effect: false
     },
     disable_top_img: false,
@@ -41,13 +41,13 @@ hexo.extend.filter.register('before_generate', () => {
       default_cover: null
     },
     error_img: {
-      flink: '/img/friend_404.gif',
-      post_page: '/img/404.jpg'
+      flink: '/VsCode/friend_404.gif',
+      post_page: '/VsCode/404.jpg'
     },
     error_404: {
       enable: false,
       subtitle: 'Page Not Found',
-      background: '/img/error-page.png'
+      background: '/VsCode/error-page.png'
     },
     post_meta: {
       page: {

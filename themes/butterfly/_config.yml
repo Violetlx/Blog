@@ -52,13 +52,13 @@ social:
 # Image Settings
 # --------------------------------------
 
-favicon: /img/favicon.png
+favicon: /VsCode/favicon.png
 
 avatar:
-  img: /img/butterfly-icon.png
+  img: /VsCode/butterfly-icon.png
   effect: false
 
-# Disable all banner images
+# Disable all banner VsCode
 disable_top_img: false
 
 # If the banner of page not setting, it will show the default_top_img
@@ -104,14 +104,14 @@ cover:
 
 # Replace Broken Images
 error_img:
-  flink: /img/friend_404.gif
-  post_page: /img/404.jpg
+  flink: /VsCode/friend_404.gif
+  post_page: /VsCode/404.jpg
 
 # A simple 404 page
 error_404:
   enable: false
   subtitle: 'Page Not Found'
-  background: /img/error-page.png
+  background: /VsCode/error-page.png
 
 post_meta:
   # Home Page
@@ -139,7 +139,7 @@ post_meta:
 # --------------------------------------
 
 # The top_img settings of home page
-# default: top img - full screen, site info - middle
+# default: top VsCode - full screen, site info - middle
 # The position of site info, eg: 300px/300em/300rem/10%
 index_site_info_top:
 # The height of top_img, eg: 300px/300em/300rem
@@ -209,10 +209,10 @@ reward:
   enable: false
   text:
   QR_code:
-    # - img: /img/wechat.jpg
+    # - VsCode: /VsCode/wechat.jpg
     #   link:
     #   text: wechat
-    # - img: /img/alipay.jpg
+    # - VsCode: /VsCode/alipay.jpg
     #   link:
     #   text: alipay
 
