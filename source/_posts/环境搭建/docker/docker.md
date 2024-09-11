@@ -1,7 +1,7 @@
 ---
 title: Docker
 tags:
-  - categories
+  - 环境搭建
 categories:
   - 环境搭建
 description: hello word~
