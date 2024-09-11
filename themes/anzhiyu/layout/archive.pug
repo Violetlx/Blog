@@ -1,0 +1,8 @@
+extends includes/layout
+
+block content
+  include includes/mixins/article-sort
+  #archive
+    .article-sort-title= `${_p('page.articles')} - ${getArchiveLength()}`
+    +articleSort(page.posts, page.current)
+    include includes/pagination

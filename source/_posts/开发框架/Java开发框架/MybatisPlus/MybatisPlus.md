@@ -2,10 +2,11 @@
 title: MybatisPlus
 tags:
   - 开发框架
-categories:
-  - 开发框架
   - SpringCloud
-  - MyBatisPlus
+categories:
+  - [开发框架, Java开发框架, MybatisPlus]
+  - [SpringCloud,MyBatisPlus]
+series: SpringCloud
 description: MybatisPlus学习
 top_img: >-
   	https://www.mulei.ltd/wp-content/uploads/2021/07/cover-mybatis-plus.png

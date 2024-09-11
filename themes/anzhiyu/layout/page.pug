@@ -1,0 +1,35 @@
+extends includes/layout
+
+block content
+  #page
+    if top_img === false && !page.top_single
+      h1.page-title= page.title
+    case page.type
+      when 'tags'
+        include includes/page/tags
+      when 'link'
+        include includes/page/flink
+      when 'categories'
+        include includes/page/categories
+      when 'essay'
+        include includes/page/essay
+      when 'room'
+        include includes/page/room
+      when 'about'
+        include includes/page/about
+      when 'album'
+        include includes/page/album
+      when 'fcircle'
+        include includes/page/fcircle
+      when 'album_detail'
+        include includes/page/album_detail
+      when 'music'
+        include includes/page/music
+      when 'equipment'
+        include includes/page/equipment
+      default
+        include includes/page/default-page
+
+    if page.comments !== false && theme.comments && theme.comments.use
+      - var commentsJsLoad = true
+      !=partial('includes/third-party/comments/index', {}, {cache: true})

@@ -2,8 +2,11 @@
 title: Docker
 tags:
   - 环境搭建
+  - SpringCloud
 categories:
-  - 环境搭建
+  - [SpringCloud,Docker]
+  - [环境搭建,Docker]
+series: SpringCloud
 description: hello word~
 top_img: https://pic.imgdb.cn/item/64c0ad651ddac507cc99ceb7.jpg
 cover: https://pic.imgdb.cn/item/64c0ad651ddac507cc99ceb7.jpg

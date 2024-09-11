@@ -125,7 +125,7 @@ cover:
     - /img/basic/v3.png
     - /img/basic/v4.png
     - /img/basic/v5.png
-    -
+
 # Replace Broken Images
 error_img:
   flink: /img/friend_404.gif
@@ -145,7 +145,7 @@ post_meta:
     # Choose: date / relative
     date_format: date
     categories: true
-    tags: false
+    tags: true
     label: true
   post:
     # Choose: left / center
@@ -262,7 +262,7 @@ post_edit:
 related_post:
   enable: true
   # Number of posts displayed
-  limit: 6
+  limit: 18
   # Choose: created / updated
   date_type: created
 
@@ -938,7 +938,7 @@ lightbox: fancybox
 
 # Series
 series:
-  enable: false
+  enable: true
   # Order by title or date
   orderBy: 'title'
   # Sort of order. 1, asc for ascending; -1, desc for descending

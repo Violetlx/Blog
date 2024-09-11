@@ -4,7 +4,7 @@
 
 # Site
 title: Violet博客屋
-subtitle: ''
+subtitle: '生活明朗，万物可爱'
 description: '记录美好生活'
 keywords:
 author: violet
@@ -114,7 +114,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: butterfly
+theme: anzhiyu
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

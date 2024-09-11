@@ -1,0 +1,6 @@
+if theme.algolia_search.enable
+  include algolia
+else if theme.local_search.enable
+  include local-search
+else if theme.docsearch.enable
+  include docsearch

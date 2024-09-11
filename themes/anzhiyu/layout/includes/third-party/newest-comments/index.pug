@@ -1,0 +1,13 @@
+- let { use } = theme.comments
+
+if use
+  - let forum,apiKey,userRepo
+  case use[0]
+    when 'Valine'
+      include valine
+    when 'Waline'
+      include waline
+    when 'Twikoo'
+      include twikoo-comment
+    when 'Artalk'
+      include artalk
