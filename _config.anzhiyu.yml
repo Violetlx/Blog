@@ -1,18 +1,20 @@
 menu:
-  主页: / || fas fa-home
-  博文 || fa fa-graduation-cap:
+  主页: / || anzhiyu-icon-house-chimney
+  博文 || :
     分类: /categories/ || anzhiyu-icon-tags
     标签: /tags/ || anzhiyu-icon-tags
     归档: /archives/ || anzhiyu-icon-box-archive
-  生活 || fas fa-list:
-    分享: /shuoshuo/ || fa fa-comments
-    相册: /photos/ || fa fa-camera-retro
-    音乐: /music/ || anzhiyu-icon-music
-    影视: /movies/ || fas fa-video
+  生活 || :
+    分享: /shuoshuo/ || anzhiyu-icon-envelope
+    相册: /photos/ || anzhiyu-icon-images
+    音乐: /music/?id=1708664797&server=tencent || anzhiyu-icon-music
+    影视: /movies/ || anzhiyu-icon-lightbulb
+    追番页: /bangumis/ || anzhiyu-icon-bilibili
+    我的装备: /equipment/ || anzhiyu-icon-dice-d20
   友链: /link/ || anzhiyu-icon-link
-  留言板: /messageboard/ || fa fa-paper-plane
-  随机文章: javascript:toRandomPost() || fas fa-bus
-  关于笔者: /about/ || fas fa-heart
+  留言板: /comments/ || anzhiyu-icon-envelope
+  随机文章: javascript:toRandomPost() || anzhiyu-icon-pareplane
+  关于笔者: /about/ || anzhiyu-icon-pencil
 
   # 文章:
   #   隧道: /archives/ || anzhiyu-icon-box-archive
@@ -44,13 +46,13 @@ nav:
     - title: 网页
       item:
         - name: 博客
-          link: https://blog.anheyu.com/
+          link: https://violet.zeabur.app/
           icon: /img/favicon.ico
     - title: 项目
       item:
-        - name: 安知鱼图床
-          link: https://image.anheyu.com/
-          icon: https://image.anheyu.com/favicon.ico
+        - name: Github
+          link: https://github.com/
+          icon: https://pic4.zhimg.com/v2-341e1d3b2845db15bceeff70d3fe228b_r.jpg
 
 # mourn （哀悼日，指定日期网站简单变灰，不包括滚动条）
 # 注意： 仅网站首页变灰，其他页面正常显示
@@ -155,18 +157,18 @@ favicon: /favicon.ico
 
 # Avatar (头像)
 avatar:
-  img: https://bu.dusays.com/2023/04/27/64496e511b09c.jpg
-  effect: true
+  img: 	https://img.touxiangkong.com/uploads/allimg/2023030411/tic2hkfzwwo.jpg
+  effect: false
 
 # Disable all banner image
 disable_top_img: false
 
 # The banner image of home page
 # "background: url() top / cover no-repeat"
-index_img: "background: url(/img/basic/index_img.png) top / cover no-repeat"
+index_img: "background: url(/img/basic/v6.png) top / cover no-repeat"
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: /img/basic/v1.png
+default_top_img: "https://wallpaperm.cmcm.com/43e4eaca74a4c7187ea46384d3b4d165.jpg"
 
 cover:
   # display the cover or not (是否显示文章封面)
@@ -175,7 +177,7 @@ cover:
   archives_enable: true
   # the position of cover in home page (封面显示的位置)
   # left/right/both
-  position: both
+  position: left
   # When cover is not set, the default cover is displayed (当没有设置cover时，默认的封面显示)
   default_cover:
     - /img/basic/v1.png
@@ -267,10 +269,10 @@ post_copyright:
 reward:
   enable: true
   QR_code:
-    - img: https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png
+    - img: https://c-ssl.dtstatic.com/uploads/blog/202304/15/20230415081411_9a88c.thumb.400_0.jpg
       link:
       text: 微信
-    - img: https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png
+    - img: https://tupian.qqw21.com/article/UploadPic/2020-6/20206416212275003.jpg
       link:
       text: 支付宝
 
@@ -449,7 +451,7 @@ crisp:
 footer:
   owner:
     enable: true
-    since: 2020
+    since: 2024
   custom_text:
   runtime:
     enable: false
@@ -557,7 +559,7 @@ footer:
       # - link: https://beian.miit.gov.cn/
       #   text: 湘ICP备-xxxxxxx号
     subTitle:
-      enable: false
+      enable: true
       # Typewriter Effect (打字效果)
       effect: true
       # Effect Speed Options (打字效果速度参数)
@@ -707,7 +709,7 @@ canvas_ribbon:
 
 # Fluttering Ribbon (动态彩带)
 canvas_fluttering_ribbon:
-  enable: true
+  enable: false
   mobile: false
 
 # canvas_nest
@@ -829,7 +831,7 @@ preloader:
   source: 3
   # pace theme (see https://codebyzach.github.io/pace/)
   pace_css_url:
-  avatar: https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg # 自定加载动画义头像
+  avatar: https://img.touxiangkong.com/uploads/allimg/2023030411/tic2hkfzwwo.jpg # 自定加载动画义头像
 
 # aside (侧边栏)
 # --------------------------------------
@@ -1058,7 +1060,7 @@ pangu:
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
   enable: false
-  field: site # site/post
+  field: post # site/post
   placeholder:
   blur: true
   progressive: true
@@ -1067,7 +1069,7 @@ lazyload:
 # See https://github.com/JLHwung/hexo-offline
 # ---------------
 pwa:
-  enable: false
+  enable: true
   startup_image_enable: true
   manifest: /manifest.json
   theme_color: var(--anzhiyu-main)
@@ -1115,7 +1117,7 @@ home_top:
   banner:
     tips: 新品主题
     title: Theme-AnZhiYu
-    image: https://bu.dusays.com/2023/05/13/645fa3cf90d70.webp
+    image: https://www.keaitupian.cn/cjpic/frombd/2/253/1639036208/3382934126.jpg
     link: https://docs.anheyu.com/
 
 # 朋友圈配置
@@ -1132,7 +1134,7 @@ universe:
 
 # 页面卡片顶部气泡升起效果
 bubble:
-  enable: true
+  enable: false
 
 #  控制台打印信息
 console:
@@ -1166,7 +1168,7 @@ comment_barrage_config:
 # https://github.com/metowolf/MetingJS
 nav_music:
   enable: true
-  console_widescreen_music: false # 宽屏状态控制台显示音乐而不是标签 enable为true 控制台依然会显示
+  console_widescreen_music: true # 宽屏状态控制台显示音乐而不是标签 enable为true 控制台依然会显示
   id: 8152976493
   server: netease
   volume: 0.7 # 默认音量
@@ -1177,7 +1179,7 @@ music_page_default: nav_music
 
 # 评论匿名邮箱
 visitorMail:
-  enable: true
+  enable: false
   mail: ""
 
 # ptool 文章底部工具
@@ -1221,7 +1223,7 @@ greetingBox:
 
 # 文章顶部ai摘要
 post_head_ai_description:
-  enable: true
+  enable: false
   gptName: AnZhiYu
   mode: local # 默认模式 可选值: tianli/local
   switchBtn: false # 可以配置是否显示切换按钮 以切换tianli/local
@@ -1243,7 +1245,7 @@ accesskey:
 
 # 友情链接顶部相关配置
 linkPageTop:
-  enable: true
+  enable: false
   title: 与数百名博主无限进步
   # 添加博主友链的评论自定义格式
   addFriendPlaceholder: "昵称（请勿包含博客等字样）：\n网站地址（要求博客地址，请勿提交个人主页）：\n头像图片url（请提供尽可能清晰的图片，我会上传到我自己的图床）：\n描述：\n站点截图（可选）：\n"
@@ -1276,12 +1278,12 @@ dynamicEffect:
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+#    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
     # 自定义css
     # - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
 
   bottom:
-    - <script src="https://cdn.jsdelivr.net/gh/MrLi12/live2d-widget-master@v1.1/autoload.js"></script>
+    - <script defer src="/live2d-widget-master/autoload.js"></script>
     # 自定义js
     # - <script src="/js/xxx"></script>
 
@@ -1370,7 +1372,3 @@ CDN:
     # waterfall:
     # ali_iconfont_css:
     # accesskey_js:
-
-# 看板娘
-live2d:
-  enable: true
