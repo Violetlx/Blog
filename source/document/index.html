@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文档</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+
+        /* #app 的样式 */
+        #app {
+            position: relative; /* 确保子元素使用绝对定位时不会相对文档流 */
+            min-height: 100vh; /* 确保应用内容覆盖整个视口 */
+        }
+
+        .homePage {
+            position: relative; /* 确保弹窗在视口的顶部显示 */
+        }
+
+        /* 弹窗背景 */
+        .modal {
+            display: none; /* 隐藏弹窗 */
+            position: fixed;
+            //z-index: 1; /* 确保弹窗在最上层 */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            /* 调整透明度以达到更模糊透明的效果 */
+            background-color: transparent !important;
+            /* 使用 backdrop-filter 实现模糊背景效果（需检查浏览器兼容性） */
+            transition: opacity 0.3s ease; /* 渐变动画 */
+        }
+
+        /* 弹窗内容 */
+        .modal-content {
+            background-color: #fefefe;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 1700px; /* 修改为较小的最大宽度 */
+            max-height: 90vh; /* 最大高度为视口高度的80% */
+            margin: 5% auto; /* 垂直方向留出5%空间并水平居中 */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 立体感的阴影效果 */
+            border-radius: 8px; /* 圆角 */
+            overflow: hidden; /* 确保内容不会超出弹窗 */
+            opacity: 0; /* 初始不透明度 */
+            transform: scale(0.9);
+            transition: transform 0.3s ease, opacity 0.3s ease; /* 渐变动画 */
+
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+
+        }
+
+        /* 显示弹窗时的效果 */
+        .modal.show {
+            display: flex;
+            align-items: center; /* 垂直居中 */
+            justify-content: center; /* 水平居中 */
+            opacity: 1; /* 显示时不透明度 */
+        }
+
+        .modal-content.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /*-----------------------------------------------*/
+
+        /* 弹窗内容 */
+        .modal1-content {
+            position: absolute; /* 绝对定位于弹窗中心 */
+            background-color: #fefefe;
+            padding: 20px;
+            width: 80%;
+            height: 50%;
+            max-width: 800px; /* 修改为较小的最大宽度 */
+            max-height: 90vh; /* 最大高度为视口高度的80% */
+            margin: 1% auto; /* 垂直方向留出5%空间并水平居中 */
+            box-shadow: 0 4px 8px rgba(0,0,0,1.0); /* 立体感的阴影效果 */
+            border-radius: 8px; /* 圆角 */
+            overflow: hidden; /* 确保内容不会超出弹窗 */
+            transform: scale(0.9);
+            transition: transform 0.3s ease, opacity 0.3s ease; /* 渐变动画 */
+
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+        }
+
+        .modal1-content.show {
+            /* 调整透明度以达到更模糊透明的效果 */
+            background-color: transparent !important; /* 背景透明 */
+            /* 使用 backdrop-filter 实现模糊背景效果（需检查浏览器兼容性） */
+            backdrop-filter: blur(5px); /* 模糊程度可以根据需要调整 */
+            transform: scale(1);
+        }
+
+        /*-------------------------------------------------*/
+        /* 关闭按钮 */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('./images/v4.png'); /* 背景图片的路径 */
+            background-size: cover; /* 确保背景图片覆盖整个页面 */
+            background-position: center; /* 背景图片居中显示 */
+            background-attachment: fixed; /* 固定背景，滚动内容时背景保持不变 */
+            background-repeat: no-repeat; /* 避免背景图片重复 */
+        }
+
+        /* 外层 div 样式 */
+        .div1 {
+            display: flex; /* 使用 flexbox 布局 */
+            justify-content: center; /* 横向居中对齐 */
+            align-items: flex-start; /* 顶部对齐 */
+            //height: 100vh; /* 占满视口高度 */
+            padding-top: 20px; /* 顶部内边距，可调整以适应按钮与顶部的距离 */
+        }
+
+        .btn1 {
+            display: inline-block;
+            padding: 10px 30px; /* 内边距 */
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.2); /* 毛玻璃效果 */
+            border-radius: 50px; /* 椭圆形 */
+            backdrop-filter: blur(10px); /* 毛玻璃模糊效果 */
+            text-align: center;
+            transition: width 0.3s ease, padding 0.3s ease; /* 过渡效果 */
+            white-space: nowrap; /* 防止文本换行 */
+            border: none;
+        }
+
+        .btn1:hover {
+            padding: 10px 500px; /* 悬停时的内边距变化 */
+        }
+
+
+        // 时间
+        .homePageTime {
+            font-size: 45px; /* 放大字体大小 */
+            color: white; /* 改变颜色为白色 */
+            margin-top: 1%;
+            text-align: center; /* 居中对齐 */
+        }
+        // 天气
+        .homePageWeather {
+            font-weight: bold;
+        }
+        // 诗词
+        .homePagePoetry {
+            font-style: italic;
+            margin-bottom: 20px;
+            margin-top: 30%;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start; /* Align items to the right */
+            gap: 20px; /* Adjust the gap between cards */
+            width: 100%; /* Adjust this to fit your layout needs */
+            height: 500px; /* Adjust this to fit your layout needs */
+        }
+
+        .card-item {
+            flex: 0 1 calc(20% - 20px); /* Flex properties to ensure equal width and wrap */
+            width: 80px;
+            height: 150px; /* Example height, adjust as needed */
+            box-sizing: border-box; /* Ensure padding and borders are included in the width */
+            background-color: transparent;
+            border: none;
+            text-align: center;
+        }
+
+        .card-item:hover {
+            transform: scale(1.05); /* Slightly scale up the element */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+        }
+
+        .cardItem {
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            margin-left: 14%;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+            background-color: rgb(255, 255, 255);
+            border-radius: 20px;
+        }
+
+        .card-image {
+            width: 60%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 20px;
+            display: block;
+        }
+
+        .tree ul {
+            padding-top: 20px;
+            position: relative;
+            overflow: auto;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+
+        .tree li {
+            float: left;
+            text-align: center;
+            list-style-type: none;
+            position: relative;
+            padding: 50px 5px 0 5px;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+
+
+        .tree li:first-child::after {
+            border-radius: 5px 0 0 0;
+            -webkit-border-radius: 5px 0 0 0;
+            -moz-border-radius: 5px 0 0 0;
+        }
+
+
+        .tree li div {
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #666;
+            font-size: 11px;
+            display: inline-block;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+
+
+
+        .card {
+            width: 190px;
+            padding: 20px;
+            background: #fff;
+            border: 6px solid #000;
+            box-shadow: 12px 12px 0 #000;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 17px 17px 0 #ffffff;
+        }
+
+        .card__title {
+            font-size: 16px;
+            font-weight: 900;
+            color: #000;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card__title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 90%;
+            height: 3px;
+            background-color: #000;
+            transform: translateX(-100%);
+            transition: transform 0.3s;
+        }
+
+        .card:hover .card__title::after {
+            transform: translateX(0);
+        }
+
+        .card__button {
+            border: 3px solid #000;
+            background: #000;
+            color: #fff;
+            padding: 10px;
+            font-size: 18px;
+            left: 20%;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
+            width: 50%;
+            height: 100%;
+        }
+
+        .card__button::before {
+            content: "Sure?";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 105%;
+            background-color: #5ad641;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .card__button:hover::before {
+            transform: translateY(0);
+        }
+
+        .card__button:active {
+            transform: scale(0.95);
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translate(2px, 2px);
+            }
+            25% {
+                transform: translate(-2px, -2px);
+            }
+            50% {
+                transform: translate(-2px, 2px);
+            }
+            75% {
+                transform: translate(2px, -2px);
+            }
+            100% {
+                transform: translate(2px, 2px);
+            }
+        }
+
+        .glitch {
+            animation: glitch 0.3s infinite;
+        }
+
+        .cardModal {
+            width: 190px;
+            height: 254px;
+            background: rgb(103, 225, 255);
+            transition: all 0.4s;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 5px  rgba(0, 0, 0, 0.705);
+            font-size: 30px;
+            font-weight: 900;
+        }
+
+        .cardModal:hover {
+            border-radius: 15px;
+            cursor: pointer;
+            transform: scale(1.2);
+            box-shadow: 0 0 10px 5px  rgba(0, 0, 0, 0.705);
+            background: rgb(103, 151, 255);
+        }
+
+        .first-content {
+            height: 100%;
+            width: 100%;
+            transition: all 0.4s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            border-radius: 15px;
+        }
+
+        .cardModal:hover .first-content {
+            height: 0;
+            opacity: 0;
+        }
+
+        .second-content {
+            height: 0%;
+            width: 100%;
+            opacity: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            transition: all 0.4s;
+            font-size: 0;
+            transform: rotate(90deg) scale(-1);
+        }
+
+        .cardModal:hover .second-content {
+            opacity: 1;
+            height: 100%;
+            font-size: 1.8rem;
+            transform: rotate(0deg);
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div class="homePage">
+        <div class="div1">
+            <!-- 标题 -->
+            <button class="btn1" onclick="window.location.href='../index.html';">回到首页</button>
+        </div>
+        <!--时间-->
+        <div id="homePageTime" onclick="goToDialog()" class="homePageTime" style="z-index: 1;font-size: 45px;color: white;margin-top: 1%;text-align: center" data-modal="modal1">
+            加载时间...
+        </div>
+
+        <div class="homePagePoetry">
+            <img src="https://v2.jinrishici.com/one.svg?font-size=20&spacing=2&color=white" alt="今日诗词" style="max-width:100%; display: block; margin: 0 auto;">
+        </div>
+
+        <!-- 天气 -->
+        <div class="homePageWeather" style="position: absolute; top: 10px; right: 10px;">
+            <div id="weatherIcon" style="font-size: 50px;">
+                {{ weather.icon }}
+            </div>
+        </div>
+
+        <div class="div2" style="width: 100%;height: 100%;display: block;">
+            <!--树表-->
+            <div class="tree" id="tree"></div>
+        </div>
+    </div>
+
+
+    <!-- 弹窗结构 -->
+    <div id="modal" class="modal">
+        <div class="modal1-content">
+            <span class="close">&times;</span>
+            <div id="card-container" class="card-container"></div>
+        </div>
+    </div>
+
+</div>
+
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <iframe id="myIframe" width="100%" height="675px"></iframe>
+        <span class="close" style="margin-left: 8px;"> &times;</span>
+    </div>
+</div>
+
+<div id="modal2" class="modal">
+    <div id="div4" class="modal-content" style="margin-right: 10px;height: 675px;background-image: url('https://wallpaperm.cmcm.com/43e4eaca74a4c7187ea46384d3b4d165.jpg');flex-wrap: wrap;gap: 50px;"></div>
+    <span class="close" style="margin-right: 45px">🔥</span>
+</div>
+
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <iframe id="myIframe1" width="100%" height="675px"></iframe>
+        <span class="close" style="margin-left: 8px;"> &times;</span>
+    </div>
+</div>
+
+<script>
+    // 天气
+    let weather = {
+        name: '晴',
+        icon: '☀️'
+    };
+    let cardData = [
+        {
+            name: 'Violet博客',
+            url: '/',
+            image: 'https://img.51miz.com/Element/00/37/05/35/269a6e11_E370535_17a70234.png',
+            flag: 1
+        },
+        {
+            name: 'Kimi',
+            url: 'https://kimi.moonshot.cn/',
+            image: 'https://api.iowen.cn/favicon/kimi.moonshot.cn.png',
+            flag: 1
+        },
+        {
+            name: '通义千问',
+            url: 'https://tongyi.aliyun.com/qianwen/',
+            image: 'https://www.weilanai.com/wp-content/uploads/2023/05/eee.png',
+            flag: 2
+        },
+        {
+            name: '豆包',
+            url: 'https://www.doubao.com/chat/',
+            image: 'https://toolsdar.com/wp-content/uploads/1692332410-Pasted.png',
+            flag: 1
+        },
+        {
+            name: '百度',
+            url: 'https://www.baidu.com/',
+            image: 'https://pic.pngsucai.com/00/75/51/4a288785c24fb301.webp',
+            flag: 1
+        },
+    ];
+    let treeData = [{
+        "name": "_posts",
+        "url": "",
+        "image": "./images/tree/v1.png",
+        "files": [
+            {
+                "image": "./images/card/v1.png",
+                "url": "/",
+                "name": "博客首页"
+            }
+        ],
+        "children": [
+            {
+                "name": "工具",
+                "url": "",
+                "image": "./images/tree/v2.png",
+                "files": [
+                    {
+                        "image": "./images/card/v2.png",
+                        "url": "/categories/工具/",
+                        "name": "工具"
+                    }
+                ],
+                "children": [
+                    {
+                        "name": "Java后端工具",
+                        "url": "",
+                        "image": "./images/tree/v4.png",
+                        "files": [
+                            {
+                                "image": "./images/card/v5.png",
+                                "url": "/posts/97a0a1c6.html",
+                                "name": "IDEA"
+                            }
+                        ],
+                    },
+                    {
+                        "name": "前端工具",
+                        "url": "",
+                        "image": "./images/tree/v5.png",
+                        "files": [
+                            {
+                                "image": "./images/card/v6.png",
+                                "url": "/posts/c68db7e6.html",
+                                "name": "VsCode"
+                            }
+                        ],
+                    },
+                    {
+                        "name": "数据库工具",
+                        "url": "",
+                        "image": "./images/tree/v6.png",
+                        "files": [],
+                    },
+                    {
+                        "name": "虚拟机工具",
+                        "url": "",
+                        "image": "./images/tree/v7.png",
+                        "files": [
+                            {
+                                "image": "./images/card/v7.png",
+                                "url": "/posts/545a6120.html",
+                                "name": "VMware"
+                            }
+                        ],
+                    }
+                ]
+            },
+            {
+                "name": "开发框架",
+                "url": "",
+                "image": "./images/tree/v3.png",
+                "files": [
+                    {
+                        "image": "./images/card/v3.png",
+                        "url": "/categories/开发框架/Java开发框架/",
+                        "name": "开发框架"
+                    },
+                ],
+                "children": [
+                    {
+                        "name": "Java开发框架",
+                        "image": "./images/tree/v8.png",
+                        "files": [
+                            {
+                                "image": "./images/card/v8.png",
+                                "url": "/posts/8af9e237.html",
+                                "name": "MybatisPlus"
+                            },
+                        ],
+                    }
+                ]
+            },
+            {
+                "name": "环境搭建",
+                "url": "",
+                "image": "./images/tree/v10.png",
+                "files": [
+                    {
+                        "image": "./images/card/v4.png",
+                        "url": "/categories/环境搭建/",
+                        "name": "环境搭建"
+                    },
+                ],
+                "children": [
+                    {
+                        "name": "Docker",
+                        "url": "/posts/docker.md",
+                        "image": "./images/tree/v9.png", // replace with your actual image URL
+                        "files": [
+                            {
+                                "image": "./images/card/v9.png",
+                                "url": "/posts/f5f9fa9b.html",
+                                "name": "Docker"
+                            },
+                        ],
+                    },
+                    {
+                        "name": "数据库",
+                        "url": "",
+                        "image": "https://wallpaperm.cmcm.com/43e4eaca74a4c7187ea46384d3b4d165.jpg",
+                        "files": [
+                            {
+                                "image": "./images/card/v10.png",
+                                "url": "/posts/6b830637.html",
+                                "name": "Redis"
+                            },
+                        ],
+                        "children": []
+                    }
+                ]
+            },
+
+        ]
+    }]
+
+    //当前时间
+    function updateCurrentTime() {
+        const now = new Date();
+        document.querySelector('.homePageTime').textContent = now.toLocaleTimeString('zh-CN', {
+            hour12: false,
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+    }
+
+    // 天气
+    // 更新页面上的天气图标
+    function updateWeatherIcon(icon) {
+        document.getElementById('weatherIcon').innerText = icon;
+    }
+
+    function getWeather() {
+        return new Promise(resolve => {
+            const weathers = [
+                {name: "晴", icon: "☀️"},
+                {name: "多云", icon: "⛅"},
+                {name: "阴", icon: "☁️"},
+                {name: "小雨", icon: "🌧️"},
+                {name: "雷阵雨", icon: "⛈️"}
+            ];
+            const randomIndex = Math.floor(Math.random() * weathers.length);
+            weather.name = weathers[randomIndex].name;
+            weather.icon = weathers[randomIndex].icon;
+            updateWeatherIcon(weather.icon);  // 更新页面
+            resolve(weather.icon);
+        });
+    }
+
+    function goToDialog() {
+        var modal = document.getElementById('modal');
+        modal.classList.add('show');
+        modal.querySelector('.modal1-content').classList.add('show');
+    }
+
+    function closeModal() {
+        var modal = document.getElementById('modal');
+        modal.classList.remove('show');
+        modal.querySelector('.modal1-content').classList.remove('show');
+    }
+
+    // 当用户点击模窗外部区域时，关闭弹窗
+    window.onclick = function (event) {
+        var modal = document.getElementById('modal');
+        if (event.target === modal) {
+            closeModal();
+        }
+    }
+
+    function goToCard(card) {
+        var modal = document.getElementById('modal1');
+        modal.classList.add('show');
+        modal.querySelector('.modal-content').classList.add('show');
+        if (card.flag === 1) {
+            document.getElementById('myIframe').src = card.url;
+        } else {
+            // 关闭窗口
+            modal.classList.remove('show');
+            // 新建网页跳转
+            window.open(card.url, '_blank');
+        }
+
+    }
+
+    function goToFiles(file) {
+        var modal = document.getElementById('modal3');
+        modal.classList.add('show');
+        modal.querySelector('.modal-content').classList.add('show');
+        document.getElementById('myIframe1').src = file.url;
+    }
+
+    function goToDocument(nodeData) {
+        var modal = document.getElementById('modal2');
+        modal.classList.add('show');
+        modal.querySelector('.modal-content').classList.add('show');
+        console.log("33333===>>>" + nodeData.name)
+        goToCardModal(nodeData);
+    }
+
+    // Function to generate HTML for cards
+    function generateCards() {
+        // 获取容器页面元素
+        const container = document.getElementById('card-container');
+        container.innerHTML = ''; // Clear any existing content
+        // 遍历cardData数组，为每个元素创建一个卡片
+        cardData.forEach(card => {
+            // 创建一个 div
+            const cardItem = document.createElement('div');
+            // 设置 div 的 class 为 card-item
+            cardItem.className = 'card-item';
+            cardItem.style.flex = '0 1 calc(20% - 20px)';
+            // 再创建一个 div
+            const cardItemInner = document.createElement('div');
+            // 设置 div 的 class 为 cardItem
+            cardItemInner.className = 'cardItem';
+            const cardImage = document.createElement('img');
+            cardImage.src = card.image;
+            cardImage.alt = "Card Image";
+            cardImage.className = "card-image";
+            // 创建下方框
+            const cardTitle = document.createElement('span');
+            cardTitle.textContent = card.name;
+            cardTitle.style.color = 'white';
+
+            // Add click event handler to each card
+            cardItem.addEventListener('click', () => {
+                goToCard(card);
+            });
+
+            cardItem.appendChild(cardItemInner);
+            cardItemInner.appendChild(cardImage);
+            cardItem.appendChild(cardTitle);
+
+            container.appendChild(cardItem);
+        });
+        console.log("111111======" + container.innerHTML);
+    }
+
+    function tree() {
+        // 获取容器页面元素
+        const container = document.getElementById('tree');
+        container.innerHTML = ''; // 清除现有内容
+
+        function createNode(node, parent) {
+            const li = document.createElement('li');
+
+            // 创建卡片div
+            const div = document.createElement('div');
+            div.className = 'card';
+
+            // 将节点数据存储到div的data属性中
+            div.dataset.node = JSON.stringify(node);
+
+            // 创建标题span
+            const span = document.createElement('span');
+            span.className = 'card__title';
+            span.textContent = node.name;
+
+            // 创建图片img
+            const img = document.createElement('img');
+            img.src = node.image;
+            img.style.maxWidth = '100%';
+            img.style.height = '100%';
+            img.style.objectFit = 'cover'; // 避免图片变形
+            img.style.display = 'block';
+            img.style.margin = '0 auto';
+
+            // 将span和img添加到div中
+            div.appendChild(span);
+            div.appendChild(img);
+
+            // 将div添加到li中
+            li.appendChild(div);
+
+            // 创建ul元素用于存放子节点
+            const ul = document.createElement('ul');
+
+            // 如果有子节点，并且子节点数组非空，则递归创建子节点
+            if (node.children && node.children.length > 0) {
+                node.children.forEach(child => {
+                    createNode(child, ul);
+                });
+            }
+
+            // 将ul添加到li中
+            li.appendChild(ul);
+
+            // 将li添加到parent中（初始是container）
+            parent.appendChild(li);
+
+            div.addEventListener('click', () => {
+                const nodeData = JSON.parse(div.dataset.node);
+                goToDocument(nodeData);
+            });
+        }
+
+        // 渲染treeData中的每一个节点
+        treeData.forEach(tree => {
+            createNode(tree, container);
+        });
+        console.log("222222======" + container.innerHTML);
+    }
+
+
+    function goToCardModal(nodeData) {
+        // 获取模态框容器元素
+        const container = document.getElementById('div4');
+
+        // 清空容器内容，避免数据残留
+        container.innerHTML = '';
+
+        // 遍历节点数据中的文件
+        nodeData.files.forEach(file => {
+            // 创建一个包含内容的 div 元素
+            const div = document.createElement('div');
+            div.className = 'cardModal';
+
+            // 创建第一个内容区域
+            const firstContent = document.createElement('div');
+            firstContent.className = 'first-content';
+            firstContent.style.position = 'relative'
+
+            // 创建 img 元素
+            const img = document.createElement('img');
+            img.src = file.image;
+            // 使图片充满整个父容器
+            img.style.width = '100%';      // 宽度占满父容器
+            img.style.height = '100%';     // 高度占满父容器
+            img.style.objectFit = 'cover'; // 保持图片的纵横比，裁剪多余的部分
+            // 确保图片的块级显示，不影响父容器的布局
+            img.style.display = 'block';
+            img.style.margin = '0 auto';
+            // 创建span元素
+            const div1 = document.createElement('div');
+            div1.textContent = file.name;
+            div1.style.position = 'absolute';   // 绝对定位
+            div1.style.bottom = '1px';            // 靠底部对齐
+            div1.style.width = '90%';            // 宽度占满父容器
+            div1.style.textAlign = 'center';   // 文字居中
+            div1.style.color = 'white';         // 白色字体
+            div1.style.padding = '25px';        // 内边距
+            div1.style.fontSize = '16px';       // 字体大小（可以根据需要调整）
+           // 半透明毛玻璃效果
+            div1.style.background = 'rgba(255, 255, 255, 0.2)'; // 半透明白色背景
+            div1.style.backdropFilter = 'blur(10px)'; // 模糊效果
+            div1.style.borderRadius = '8px'; // 可选：圆角边框增加柔和效果
+            div1.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 1.5)'; // 添加阴影，使其更立体
+            div1.style.textShadow = '1px 1px 3px rgba(0, 0, 0, 1.5)'; // 添加文本阴影，增强可读性
+
+            // 创建第二个内容区域
+            const secondContent = document.createElement('div');
+            secondContent.className = 'second-content';
+
+            // 创建第二个 img 元素（修正为 img）
+            const span1 = document.createElement('span');
+            span1.textContent = file.name;
+
+            // 组装结构
+            container.appendChild(div);
+            div.appendChild(firstContent);
+            div.appendChild(secondContent);
+            firstContent.appendChild(img);
+            firstContent.appendChild(div1);
+            secondContent.appendChild(span1);
+
+            div.addEventListener('click', () => {
+                goToFiles(file);
+            })
+
+            // 调试输出
+            console.log("5555=====>>>>", div.innerHTML);
+        });
+    }
+
+    // 监听整个文档的点击事件，并根据点击的目标来处理弹窗的显示
+    document.addEventListener('click', function (event) {
+        // 检查点击的目标是否是带有data-modal属性的按钮
+        if (event.target.matches('button[data-modal]')) {
+            var modalId = event.target.getAttribute('data-modal');
+            var modal = document.getElementById(modalId);
+            modal.classList.add('show');
+            modal.querySelector('.modal-content').classList.add('show');
+        }
+        // 当用户点击弹窗外部区域时，关闭弹窗
+        if (event.target.classList.contains('modal')) {
+            event.target.classList.remove('show');
+            event.target.querySelector('.modal-content').classList.remove('show');
+        }
+        // 点击关闭按钮时关闭弹窗
+        if (event.target.classList.contains('close')) {
+            var modal = event.target.closest('.modal');
+            modal.classList.remove('show');
+            modal.querySelector('.modal-content').classList.remove('show');
+        }
+
+
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // 时间
+        updateCurrentTime();
+        // 天气
+        getWeather();
+        generateCards();
+        tree();
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+</body>
+</html>
