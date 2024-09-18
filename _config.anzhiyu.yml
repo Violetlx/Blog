@@ -13,9 +13,12 @@ menu:
   我的 || :
     小空调: /air-conditioner/ || anzhiyu-icon-fan
     我的装备: /equipment/ || anzhiyu-icon-dice-d20
+  文档 || :
+    文档页: /document/ || anzhiyu-icon-book
+    柏码: /itbaima/ || anzhiyu-icon-book
+    菜鸟教程: /runoob/ || anzhiyu-icon-dice-d20
   友链: /link/ || anzhiyu-icon-link
   留言板: /comments/ || anzhiyu-icon-envelope
-  文档: /document/ || anzhiyu-icon-book
   随机文章: javascript:toRandomPost() || anzhiyu-icon-pareplane
   关于笔者: /about/ || anzhiyu-icon-pencil
 
@@ -160,7 +163,7 @@ favicon: /favicon.ico
 
 # Avatar (头像)
 avatar:
-  img: 	https://img.touxiangkong.com/uploads/allimg/2023030411/tic2hkfzwwo.jpg
+  img: /img/basic/avatar.png
   effect: false
 
 # Disable all banner image
@@ -834,7 +837,7 @@ preloader:
   source: 3
   # pace theme (see https://codebyzach.github.io/pace/)
   pace_css_url:
-  avatar: https://img.touxiangkong.com/uploads/allimg/2023030411/tic2hkfzwwo.jpg # 自定加载动画义头像
+  avatar: /img/basic/avatar.png # 自定加载动画义头像
 
 # aside (侧边栏)
 # --------------------------------------

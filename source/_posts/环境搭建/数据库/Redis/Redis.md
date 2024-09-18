@@ -4,8 +4,7 @@ tags:
   - 环境搭建
   - 数据库
 categories:
-  - 环境搭建
-  - 数据库
+  - [环境搭建]
 description: Redis安装说明
 top_img: >-
   https://files.lynchow.com/2022-04-22-redis.png

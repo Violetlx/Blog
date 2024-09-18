@@ -5,7 +5,6 @@ tags:
   - SpringCloud
 categories:
   - 工具
-  - 虚拟机工具
 description: VMware下载安装
 top_img: 'https://img.onlinedown.net/download/202011/130602-5faa1fba690d4.jpg'
 cover: 'https://img.onlinedown.net/download/202011/130602-5faa1fba690d4.jpg'

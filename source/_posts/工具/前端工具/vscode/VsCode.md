@@ -4,7 +4,6 @@ tags:
   - 工具
 categories:
   - 工具
-  - 前端工具
 description: VsCode下载安装
 top_img: 'https://file.psd.cn/20211216A/l2g0lriaknq_PSD_cn.jpg'
 cover: 'https://file.psd.cn/20211216A/l2g0lriaknq_PSD_cn.jpg'

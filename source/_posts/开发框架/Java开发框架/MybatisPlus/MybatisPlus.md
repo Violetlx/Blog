@@ -4,8 +4,8 @@ tags:
   - 开发框架
   - SpringCloud
 categories:
-  - [开发框架, Java开发框架, MybatisPlus]
-  - [SpringCloud,MyBatisPlus]
+  - [开发框架]
+  - [SpringCloud]
 series: SpringCloud
 description: MybatisPlus学习
 top_img: >-

@@ -4,7 +4,6 @@ tags:
   - 工具
 categories:
   - 工具
-  - Java后端工具
 description: Idea下载安装
 top_img: >-
   https://static-00.iconduck.com/assets.00/intellij-idea-icon-2048x2026-pt4psh5t.png
