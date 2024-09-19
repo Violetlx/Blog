@@ -17,8 +17,13 @@ menu:
     文档页: /document/ || anzhiyu-icon-book
     柏码: /itbaima/ || anzhiyu-icon-book
     菜鸟教程: /runoob/ || anzhiyu-icon-dice-d20
-  友链: /link/ || anzhiyu-icon-link
-  留言板: /comments/ || anzhiyu-icon-envelope
+    黑马程序员: /itheima/ || anzhiyu-icon-dice-d20
+  友人帐 || :
+    友链: /link/ || anzhiyu-icon-link
+    留言板: /comments/ || anzhiyu-icon-envelope
+  网站导航 || :
+    前端: /front/ || anzhiyu-icon-dice-d20
+    后端: /back-end/ || anzhiyu-icon-dice-d20
   随机文章: javascript:toRandomPost() || anzhiyu-icon-pareplane
   关于笔者: /about/ || anzhiyu-icon-pencil
 
