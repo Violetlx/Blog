@@ -7,13 +7,14 @@ menu:
   生活 || :
     分享: /shuoshuo/ || anzhiyu-icon-envelope
     相册: /photos/ || anzhiyu-icon-images
-    音乐: /music/?id=1708664797&server=tencent || anzhiyu-icon-music
+    音乐: /music/?id=1994908354&server=netease || anzhiyu-icon-music
     影视: /movies/ || anzhiyu-icon-lightbulb
     追番页: /bangumis/ || anzhiyu-icon-bilibili
   我的 || :
     小空调: /air-conditioner/ || anzhiyu-icon-fan
     我的装备: /equipment/ || anzhiyu-icon-dice-d20
   文档 || :
+    随机文章: javascript:toRandomPost() || anzhiyu-icon-book
     文档页: /document/ || anzhiyu-icon-book
     柏码: /itbaima/ || anzhiyu-icon-book
     菜鸟教程: /runoob/ || anzhiyu-icon-dice-d20
@@ -24,7 +25,6 @@ menu:
   网站导航 || :
     前端: /front/ || anzhiyu-icon-dice-d20
     后端: /back-end/ || anzhiyu-icon-dice-d20
-  随机文章: javascript:toRandomPost() || anzhiyu-icon-pareplane
   关于笔者: /about/ || anzhiyu-icon-pencil
 
   # 文章:
