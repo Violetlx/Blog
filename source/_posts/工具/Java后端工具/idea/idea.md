@@ -6,9 +6,9 @@ categories:
   - 工具
 description: Idea下载安装
 top_img: >-
-  https://static-00.iconduck.com/assets.00/intellij-idea-icon-2048x2026-pt4psh5t.png
+  https://tse1-mm.cn.bing.net/th/id/OIP-C.YD64LaQFsNmslsvpQbzuQgHaD0?rs=1&pid=ImgDetMain
 cover: >-
-  https://static-00.iconduck.com/assets.00/intellij-idea-icon-2048x2026-pt4psh5t.png
+  https://tse1-mm.cn.bing.net/th/id/OIP-C.YD64LaQFsNmslsvpQbzuQgHaD0?rs=1&pid=ImgDetMain
 abbrlink: 97a0a1c6
 date: 2024-09-09 11:20:2
 ---
