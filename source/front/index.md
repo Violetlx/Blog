@@ -16,6 +16,14 @@ aside: false
 <div id='libCategories'>
 <div id="lib-cards" class="container">
 
+<a href="http://frontend.yuxang.com/" target="_blank">
+<card data-image="https://tse1-mm.cn.bing.net/th/id/OIP-C.NUAZKmaNly4QQvwpuXgB1wHaEh?rs=1&pid=ImgDetMain">
+<h1 slot="header">前端导航</h1>
+<p slot="content">前端导航。</p>
+</card>
+</a>
+
+
 <a href="https://uiverse.io/" target="_blank">
 <card data-image="https://tse4-mm.cn.bing.net/th/id/OIP-C.EN3ASxuucRc41W7uChZOOAHaEA?rs=1&pid=ImgDetMain">
 <h1 slot="header">UIVerse</h1>
