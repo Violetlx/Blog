@@ -190,3 +190,18 @@ envelope_comment:
     comments: true
     top_img: false
     type: envelope
+
+# 你不是必须设置它们。若不设置，则使用默认配置。
+widget_tree:
+  cdn: true
+  hide: true
+  layout: default
+  # layout:
+  #   - home
+  #   - page
+  showCount: true
+  toc:
+    enable: false
+    # max_depth:
+    # min_depth:
+    # list_number:
