@@ -1,7 +1,7 @@
 ---
 title: Idea下载安装
 tags:
-  - 工具
+  - IDEA
 categories:
   - 工具
 description: Idea下载安装

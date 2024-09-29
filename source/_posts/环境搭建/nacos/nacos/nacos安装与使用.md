@@ -1,7 +1,7 @@
 ---
 title: Nacos 安装与使用
 tags:
-  - - 环境搭建
+  - - nacos
 categories:
   - - 环境搭建
 description: Nacos 安装与使用

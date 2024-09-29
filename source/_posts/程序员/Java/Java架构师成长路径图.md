@@ -1,7 +1,7 @@
 ---
 title: Java架构师成长路径图
 tags:
-  - - 程序员
+  - - Java程序员
 categories:
   - - 程序员
 description: Java架构师成长路径图

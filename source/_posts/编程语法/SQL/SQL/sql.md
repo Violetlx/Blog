@@ -1,7 +1,7 @@
 ---
 title: SQL使用教程
 tags:
-  - [编程语法]
+  - [SQL]
 categories:
   - [编程语法]
 description: SQL使用教程

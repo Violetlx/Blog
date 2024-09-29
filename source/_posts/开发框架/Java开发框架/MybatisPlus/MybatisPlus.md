@@ -1,8 +1,7 @@
 ---
 title: MybatisPlus
 tags:
-  - 开发框架
-  - SpringCloud
+  - MybatisPlus
 categories:
   - [开发框架]
   - [SpringCloud]

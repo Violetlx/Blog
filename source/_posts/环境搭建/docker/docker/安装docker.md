@@ -1,8 +1,7 @@
 ---
 title: 安装Docker
 tags:
-  - 环境搭建
-  - SpringCloud
+  - Docker
 categories:
   - [SpringCloud]
   - [环境搭建]

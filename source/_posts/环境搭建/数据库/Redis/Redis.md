@@ -1,8 +1,7 @@
 ---
 title: Redis安装说明
 tags:
-  - 环境搭建
-  - 数据库
+  - redis
 categories:
   - [环境搭建]
 description: Redis安装说明

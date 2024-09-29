@@ -1,7 +1,7 @@
 ---
 title: VsCode下载安装
 tags:
-  - 工具
+  - VsCode
 categories:
   - 工具
 description: VsCode下载安装

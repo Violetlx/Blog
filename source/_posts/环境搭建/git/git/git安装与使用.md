@@ -1,7 +1,7 @@
 ---
 title: Git 安装与使用
 tags:
-  - - 环境搭建
+  - - git
 categories:
   - - 环境搭建
 description: Git 安装与使用

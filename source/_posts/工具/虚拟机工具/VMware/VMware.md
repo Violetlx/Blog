@@ -1,8 +1,7 @@
 ---
 title: VMware
 tags:
-  - 工具
-  - SpringCloud
+  - VMware
 categories:
   - 工具
 description: VMware下载安装
