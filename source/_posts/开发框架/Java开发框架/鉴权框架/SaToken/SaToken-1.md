@@ -1,10 +1,10 @@
 ---
-title: SaToken鉴权框架
+title: SaToken鉴权框架-基础
 tags:
   - SaToken
 categories:
   - - 开发框架
-description: SaToken鉴权框架
+description: SaToken鉴权框架-基础
 top_img: "https://picx.zhimg.com/v2-fa9bc3ed9d6f65d08873fc8cd2eec058_720w.jpg?source=172ae18b"
 cover: "https://picx.zhimg.com/v2-fa9bc3ed9d6f65d08873fc8cd2eec058_720w.jpg?source=172ae18b"
 abbrlink: fe850976
