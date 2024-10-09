@@ -47,6 +47,7 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
   - document/**
+  - games/game/**
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -227,3 +228,17 @@ hexo_safego:
   darkmode: false  # 是否启用夜间模式
   debug: false  # 是否启用调试模式，开启后会输出详细的调试信息
 
+swiper:
+  enable: true
+  priority: 2
+  enable_page: /
+  layout:
+    type: id
+    name: recent-posts
+    index: 0
+  temple_html: '<div class="recent-post" style="height: auto;width: 100%;position: relative;">
+                    <div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container" style="top: 0;margin-bottom: 20px;">
+                        ${temple_html_item}
+                    </div>
+               </div>'
+  plus_style: ""

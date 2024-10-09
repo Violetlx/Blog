@@ -1,0 +1,138 @@
+// 游戏世界
+body[data-type="games"] 
+  .goodgames-title
+    margin: 1rem 0
+    line-height: 1;
+  .games-item
+    .games-item-content
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      margin: 0 -8px
+      .games-item-content-item
+        width: calc(25% - 12px)
+        border-radius: 12px
+        border: var(--style-border-always)
+        overflow: hidden
+        margin: 8px 6px
+        background: var(--anzhiyu-card-bg)
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5) // 增加阴影效果
+        min-height: 400px
+        position: relative
+        transition transform 0.3s, box-shadow 0.3s // 添加过渡效果
+
+        &:hover
+          transform: scale(1.05) // 鼠标悬停时放大
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8) // 鼠标悬停时阴影
+
+        +maxWidth1200()
+          width: calc(50% - 12px)
+        +maxWidth768()
+          width: 100%
+
+
+        .games-item-content-item-info
+          padding: 8px 16px 16px 16px
+          margin-top: 12px
+
+        .games-item-content-item-name
+          font-size: 18px
+          font-weight: bold
+          line-height: 1
+          margin-bottom: 8px
+          white-space: nowrap
+          overflow: visable
+          text-overflow: ellipsis
+          width: fit-content
+          cursor pointer
+          &:hover
+            color: var(--anzhiyu-main)
+
+        .games-item-content-item-specification
+          font-size: 12px
+          color: var(--anzhiyu-secondtext)
+          line-height: 16px
+          margin-bottom: 5px
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
+
+        .games-item-content-item-description
+          line-height: 20px
+          color: var(--anzhiyu-secondtext)
+          height: 60px
+          display: -webkit-box
+          overflow: hidden
+          -webkit-line-clamp: 3
+          -webkit-box-orient: vertical
+          font-size: 14px
+
+        a.games-item-content-item-link
+          font-size: 12px
+          background: var(--anzhiyu-gray-op)
+          padding: 4px 8px
+          border-radius: 8px
+          cursor: pointer
+
+          &:hover
+            background: var(--anzhiyu-main)
+            color: var(--anzhiyu-white)
+
+        .games-item-content-item-cover
+          position: relative // 确保伪元素相对定位
+          width: 100%
+          height: 200px
+          background: var(--anzhiyu-secondbg)
+          display: flex
+          justify-content: center
+          align-items: center;
+          overflow: hidden // 确保超出部分被隐藏
+          transition: 0.3s ease // 添加过渡效果
+
+          &::after
+            content '' // 创建伪元素
+            position absolute // 绝对定位
+            top 0
+            left -100% // 初始位置在左侧之外
+            width 10% // 增加宽度确保能够覆盖整个容器
+            height 100% // 伪元素填充可用高度
+            background rgba(255, 255, 255, 0.5) // 半透明的白色背景，用于扫光效果
+            transform skewX(-20deg) // 斜切效果
+            opacity 0 // 初始为透明
+            transition opacity 0.3s ease // 过渡效果
+
+          &:hover::after
+            animation: move 1s ease forwards // 只在悬浮时播放动画
+            opacity 1 // 悬浮时改变透明度为1，显示扫光效果
+
+        @keyframes move
+          0%
+            left -100% // 从左侧之外开始
+          100%
+            left 120% // 回到左侧之外
+
+        img.games-item-content-item-image
+          object-fit: cover
+          height: 100%
+          width: 100%
+        // border-radius: 0
+        // 若需要去除图片圆角可以将这里的注释去掉
+
+        .games-item-content-item-toolbar
+          display: flex
+          justify-content: space-between
+          position: absolute
+          bottom: 12px
+          left: 0
+          width: 100%
+          padding: 0 16px
+
+  #web_bg
+    background: var(--anzhiyu-background);
+  #page
+    border: 0;
+    box-shadow: none !important;
+    padding: 0 !important;
+    background: 0 0 !important;
+  #page .page-title
+    display: none;

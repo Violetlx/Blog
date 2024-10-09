@@ -7,6 +7,8 @@ categories:
 description: Java架构师成长路径图
 top_img: 'https://www.javaweb.cc/zb_users/upload/editor/water/2022-12-01/63887b9fdbaf2.jpeg'
 cover: 'https://www.javaweb.cc/zb_users/upload/editor/water/2022-12-01/63887b9fdbaf2.jpeg'
+swiper_index: 1
+swiper_desc: Java架构师成长路径图！
 abbrlink: 621998ca
 date: 2024-09-23 09:36:27
 ---

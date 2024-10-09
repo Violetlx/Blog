@@ -10,6 +10,7 @@ menu:
     音乐: /music/?id=1994908354&server=netease || anzhiyu-icon-music
     影视: /movies/ || anzhiyu-icon-lightbulb
     追番页: /bangumis/ || anzhiyu-icon-bilibili
+    游戏厅: /games/ || anzhiyu-icon-rocket
   我的 || :
     小空调: /air-conditioner/ || anzhiyu-icon-fan
     我的装备: /equipment/ || anzhiyu-icon-dice-d20
