@@ -132,11 +132,18 @@ lazyload:
   preloadRatio: 3
   loadingImg: /img/load.gif
 
+#search:
+#  path: search.xml
+#  field: post
+#  format: html
+#  limit: 10000
+
+# 本地搜索
 search:
   path: search.xml
   field: post
-  format: html
-  limit: 10000
+  content: true # 文章内容
+  template: source/_data/search.xml # 自定义模板
 
 aplayer:
   meting: true
@@ -242,3 +249,5 @@ swiper:
                     </div>
                </div>'
   plus_style: ""
+
+

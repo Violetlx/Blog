@@ -6,9 +6,9 @@ categories:
   - - 程序员
 description: SpringCloud微服务项目
 top_img: >-
-  https://img.bjsxt.com/uploadfile/2018/08/Spring-Cloud-2.jpg
+  https://tse4-mm.cn.bing.net/th/id/OIP-C.oIn0fJel0mQ1k1qKb-pEKQAAAA?rs=1&pid=ImgDetMain
 cover: >-
-  https://img.bjsxt.com/uploadfile/2018/08/Spring-Cloud-2.jpg
+  https://tse4-mm.cn.bing.net/th/id/OIP-C.oIn0fJel0mQ1k1qKb-pEKQAAAA?rs=1&pid=ImgDetMain
 abbrlink: 6ed5eebe
 date: 2024-09-23 16:01:27
 ---
