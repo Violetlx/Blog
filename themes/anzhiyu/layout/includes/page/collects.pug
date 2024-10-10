@@ -1,0 +1,34 @@
+#collects
+    if site.data.collects
+        each i in site.data.collects
+            - let collects_top_background = i.top_background
+            - let collects_top_video = i.top_video
+            .author-content.author-content-item.CollectsPage.single(style=`${collects_top_background ? `background: url(${collects_top_background}) top / cover no-repeat;` : ""};`)
+                if collects_top_video
+                    video#Top_Video(width="100%" height="100%" style="object-fit: cover;z-index: 0;" preload="auto" autoplay="" loop="" muted="true" playsinline="" webkit-playsinline="" x5-playsinline="" x5-video-player-type="h5" x5-video-player-fullscreen="" x5-video-orientation="portraint" x-webkit-airplay="allow")
+                        source(src=`${collects_top_video}` type="video/mp4")
+                .card-content
+                    .author-content-item-tips=i.class_name
+                    span.author-content-item-title=i.description
+                    .content-bottom
+                        .tips=i.tip
+                    .banner-button-group
+                        a.banner-button(onclick=`pjax.loadUrl('${url_for(i.buttonLink ? i.buttonLink : '/about')}')`, data-pjax-state)
+                            i.naokuofont.naokuo-icon-circle-arrow-up-right-1(style='font-size: 1.3rem')
+                            span.banner-button-text=i.buttonText ? i.buttonText : "关于我"
+            each item in i.good_collects
+                .goodcollects-item
+                    h2.goodcollects-title= item.title
+                    .goodcollects-item-description= item.description
+                    .collects-item
+                        .collects-item-content
+                            each iten, indey in item.collects_list
+                                .collects-item-content-item
+                                    .collects-item-content-item-cover
+                                        a.collects-item-content-item-image-link(href=iten.link, target='_blank')
+                                            img.coolects-item-content-item-image(src=url_for(iten.image) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt=iten.name)
+                                    .collects-item-content-item-info
+                                        .collects-item-content-item-name(onclick=`rm.rightmenuCopyText('${iten.name}');anzhiyu.snackbarShow('${"已复制游戏名称 【" + iten.name + "】"}');` title=iten.name)= iten.name
+                                        .collects-item-content-item-specification= iten.specification
+                                        .collects-item-content-item-description= iten.description
+

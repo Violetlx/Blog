@@ -14,6 +14,7 @@ menu:
   我的 || :
     小空调: /air-conditioner/ || anzhiyu-icon-fan
     我的装备: /equipment/ || anzhiyu-icon-dice-d20
+    足迹: /collects/ || anzhiyu-icon-dice-d20
   文档 || :
     随机文章: javascript:toRandomPost() || anzhiyu-icon-book
     文档页: /document/ || anzhiyu-icon-book
