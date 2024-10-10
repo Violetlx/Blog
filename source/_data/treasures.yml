@@ -1,0 +1,42 @@
+- class_name: 藏宝阁
+  description: 藏宝阁
+  tip: 跟 Violet 一起探索藏宝
+  top_background: # https://cdn.cbd.int/naokuo-blog@1.1.1/img/2023-09-071733054.webp
+  top_video: https://cdn.cbd.int/naokuo-media@1.0.0/11.mp4
+  buttonText: 关于我
+  buttonLink: /about/
+  good_treasures:
+    - title: 小说
+      description:
+      treasures_list:
+          - name: 闺蜜蜘蛛 #名字
+            img: https://bookcover.yuewen.com/qdbimg/349573/1010868264/300 #图片链接
+            score: 4.5 # 1-5星
+            icon: fa fa-book #左上角图标
+            tip: 小说 # 右上角文字
+            url: https://book.qidian.com/info/1010868264/ # 可选
+
+          - name: 闺蜜蜘蛛 #名字
+            img: https://bookcover.yuewen.com/qdbimg/349573/1010868264/300 #图片链接
+            score: 5 # 1-5星
+            icon: fa fa-book #左上角图标
+            tip: 小说 # 右上角文字
+            url: https://book.qidian.com/info/1010868264/ # 可选
+
+
+    - title: 小说
+      description:
+      treasures_list:
+        - name: 闺蜜蜘蛛 #名字
+          img: https://bookcover.yuewen.com/qdbimg/349573/1010868264/300 #图片链接
+          score: 4.5 # 1-5星
+          icon: fa fa-book #左上角图标
+          tip: 小说 # 右上角文字
+          url: https://book.qidian.com/info/1010868264/ # 可选
+
+        - name: 闺蜜蜘蛛 #名字
+          img: https://bookcover.yuewen.com/qdbimg/349573/1010868264/300 #图片链接
+          score: 5 # 1-5星
+          icon: fa fa-book #左上角图标
+          tip: 小说 # 右上角文字
+          url: https://book.qidian.com/info/1010868264/ # 可选

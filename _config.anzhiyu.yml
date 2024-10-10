@@ -15,6 +15,7 @@ menu:
     小空调: /air-conditioner/ || anzhiyu-icon-fan
     我的装备: /equipment/ || anzhiyu-icon-dice-d20
     足迹: /collects/ || anzhiyu-icon-dice-d20
+    藏宝阁: /treasures/ || anzhiyu-icon-dice-d20
   文档 || :
     随机文章: javascript:toRandomPost() || anzhiyu-icon-book
     文档页: /document/ || anzhiyu-icon-book
@@ -1296,6 +1297,7 @@ inject:
   head:
 #    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
     - <link rel="stylesheet" href="/css/xxx.css?1">
+    - <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
     # 自定义css
     # - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
 

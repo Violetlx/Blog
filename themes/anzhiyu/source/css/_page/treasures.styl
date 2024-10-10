@@ -1,0 +1,112 @@
+// 游戏世界
+body[data-type="treasures"]
+  .page-title
+    display: none
+  .author-content-item
+    padding: 0 0
+  .games-content
+    color: white
+    margin-top: 0
+    .card-content
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: box;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -moz-box-orient: vertical;
+      -o-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+
+
+//.treasures
+  h2
+    margin-bottom: 0
+  .treasures-desc
+    margin-bottom: 10px
+  .treasures-list
+    display: flex
+    gap: 18px
+    flex-wrap: wrap
+    a.treasures_box
+      color: white !important
+      text-decoration: none !important
+    .treasures_box
+      --w: calc(100% / 6 - 15px)
+      width: var(--w)
+      display: flex
+      justify-content: space-between
+      flex-direction: column
+      background-position: center
+      background-size: cover
+      border-radius: 12px
+      position: relative
+      overflow: hidden
+      padding: 10px
+      color: #fff
+      transition: .5s
+      &::after
+        content: ''
+        position: absolute
+        height: 100%
+        width: 100%
+        left: 0
+        top: 0
+        background: rgba(0,0,0,0.3)
+        z-index: 0
+        transition: .5s
+      &:hover
+        transform: translateY(-10px)
+        &::after
+          background: rgba(0,0,0,0.1)
+      .treasures_top
+        display: flex
+        z-index: 1
+        align-items: center
+        justify-content: space-between
+      .treasures_content
+        z-index: 1
+        margin-top: 86%
+        span
+          display: block
+          font-size: 18px
+          font-weight: bold
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
+
+[data-theme='dark']
+  .treasures .treasures-list .treasures_box
+    color: #ddd !important
+    &:hover
+      transform: translateY(-10px)
+      &::after
+        background: rgba(0,0,0,0.2)
+    &::after
+      background: rgba(0,0,0,0.5)
+.treasures .treasures-list
+  @media screen and (max-width: 1100px)
+    gap: 15px
+    .treasures_box
+      --w: calc(20% - 12px)
+  @media screen and (max-width: 900px)
+    gap: 16px
+    .treasures_box
+      --w: calc(25% - 12px)
+  @media screen and (max-width: 768px)
+    gap: 15px
+    .treasures_box
+      --w: calc(100% / 3 - 10px)
+  @media screen and (max-width: 500px)
+    gap: 16px
+    .treasures_box
+      --w: calc(50% - 8px)
