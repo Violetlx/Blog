@@ -20,6 +20,29 @@
       display: flex;
       margin-top: 20px;
 
+    // 添加扫光效果
+    &::after
+      content: '' // 创建伪元素
+      position: absolute // 绝对定位
+      top: 0
+      left: -100% // 初始位置在左侧之外
+      width: 10% // 增加宽度确保能够覆盖整个容器
+      height: 100% // 伪元素填充可用高度
+      background: rgba(255, 255, 255, 0.5) // 半透明的白色背景，用于扫光效果
+      transform: skewX(-20deg) // 斜切效果
+      opacity: 0 // 初始为透明
+      transition: opacity 0.3s ease // 过渡效果
+
+    &:hover::after
+      animation: move 1s ease forwards // 只在悬浮时播放动画
+      opacity: 1 // 悬浮时改变透明度为1，显示扫光效果
+
+    @keyframes move
+      0%
+        left: -100% // 从左侧之外开始
+      100%
+        left: 120% // 回到左侧之外
+
     .unvisited-post 
       display: flex;
       color: var(--anzhiyu-secondtext);

@@ -687,7 +687,7 @@ sidebar:
 h2Divider: false
 
 # 表格隔行变色
-table_interlaced_discoloration: false
+table_interlaced_discoloration: true
 
 # 首页双栏显示
 article_double_row: true
@@ -874,7 +874,7 @@ aside:
   card_weixin:
     enable: true
     face: https://bu.dusays.com/2023/01/13/63c02edf44033.png
-    backFace: https://bu.dusays.com/2023/05/13/645fa415e8694.png
+    backFace: https://haowallpaper.com/link/common/file/getCroppingImg/15459096103063872
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all

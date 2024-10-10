@@ -6,9 +6,9 @@ categories:
   - - 生活
 description: 词
 top_img: >-
-  https://img.zcool.cn/community/01c5355e5c78d3a8012165183b7ae8.jpg@2o.jpg
+  https://haowallpaper.com/link/common/file/getCroppingImg/0b2413c42d15c44af877ecd4a43e80ac
 cover: >-
-  https://img.zcool.cn/community/01c5355e5c78d3a8012165183b7ae8.jpg@2o.jpg
+  https://haowallpaper.com/link/common/file/getCroppingImg/0b2413c42d15c44af877ecd4a43e80ac
 sticky: 2
 abbrlink: e22607b1
 date: 2024-10-08 16:22:02

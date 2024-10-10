@@ -6,83 +6,11 @@ categories:
   - - 生活
 description: 诗
 top_img: >-
-  https://img.zcool.cn/community/01b08e5e5c78d3a80121651842666c.jpg@2o.jpg
+  https://haowallpaper.com/link/common/file/getCroppingImg/15189094385356096
 cover: >-
-  https://img.zcool.cn/community/01b08e5e5c78d3a80121651842666c.jpg@2o.jpg
+  https://haowallpaper.com/link/common/file/getCroppingImg/15189094385356096
 sticky: 1
 abbrlink: 1f44fecb
 date: 2024-10-08 16:22:01
 ---
-
-{% card 诡秘之主,https://book.qidian.com/info/1010868264/,https://bookcover.yuewen.com/qdbimg/349573/1010868264/300,4.5,第一次接触这种西方文学小说，刚开始感觉看不懂，断断续续看了很多次。后来越看越觉好看，每次看甚至都需要查“文档”,fa-solid fa-book-open,小说 %}
-
-```
-#article-container
-    .treasures
-        - let treasuresPageContent = page.content
-        if site.data.treasures
-            - let result = ""
-            each i in site.data.treasures
-                - let className = i.class_name ? `<h2 ${i.class_desc?'':'style="margin-bottom:12px"'}>${i.class_name} (${i.link_list.length})</h2>` : ""
-                - let classDesc = i.class_desc ? `<div class="treasures-desc">${i.class_desc}</div>` : ""
-                - let listResult = ""
-                each j in i.link_list
-                    -
-                        listResult += `<${j.url ? "a href='" + j.url + "'" : "div"} title="${j.name}" referrerPolicy="no-referrer" class="treasures_box" style="${j.img ? `background-image: url(${j.img})` : 'background-color: #333;'}">
-                                          <div class="treasures_top">
-                                            <i class="${j.icon ? j.icon : 'fa-solid fa-film'}"></i>
-                                            <span>${j.tip ? j.tip : '电影'}</span>
-                                          </div>
-                                          <div class="treasures_content">
-                                            <span>${j.name ? j.name : '未知'}</span>
-                                            <div>${j.score ? toStar(j.score) : toStar(0)}</div>
-                                          </div>
-                                        </${j.url ? "a" : "div"}>`
-                - result += `${className}${classDesc} <div class="treasures-list">${listResult}</div>`
-            - treasuresPageContent = treasuresPageContent + result
-        != treasuresPageContent
-```
-
-```
-#treasures
-    - let treasuresPageContent = ""
-    if site.data.treasures
-        - let result = ""
-        each i in site.data.treasures
-            - let treasures_top_background = i.top_background
-            - let treasures_top_video = i.top_video
-            .author-content.author-content-item.TreasuresPage.single(style=`${treasures_top_background ? `background: url(${treasures_top_background}) top / cover no-repeat;` : ""};`)
-                if treasures_top_video
-                    video#Top_Video(width="100%" height="100%" style="object-fit: cover;z-index: 0;" preload="auto" autoplay="" loop="" muted="true" playsinline="" webkit-playsinline="" x5-playsinline="" x5-video-player-type="h5" x5-video-player-fullscreen="" x5-video-orientation="portraint" x-webkit-airplay="allow")
-                        source(src=`${treasures_top_video}` type="video/mp4")
-                .card-content
-                    .author-content-item-tips=i.class_name
-                    span.author-content-item-title=i.description
-                    .content-bottom
-                        .tips=i.tip
-                    .banner-button-group
-                        a.banner-button(onclick=`pjax.loadUrl('${url_for(i.buttonLink ? i.buttonLink : '/about')}')`, data-pjax-state)
-                            i.naokuofont.naokuo-icon-circle-arrow-up-right-1(style='font-size: 1.3rem')
-                            span.banner-button-text=i.buttonText ? i.buttonText : "关于我"
-
-            each item in i.good_treasures
-                - let title = item.title ? `<h2 ${item.description?'':'style="margin-bottom:12px"'}>${item.title} (${item.treasures_list.length})</h2>` : ""
-                - let description = item.description ? `<div class="treasures-desc">${item.description}</div>` : ""
-                - let listResult = ""
-                each j in item.treasures_list
-                    -
-                        listResult += `<${j.url ? "a href='" + j.url + "'" : "div"} title="${j.name}" referrerPolicy="no-referrer" class="treasures_box" style="${j.img ? `background-image: url(${j.img})` : 'background-color: #333;'}">
-                                          <div class="treasures_top">
-                                            <i class="${j.icon ? j.icon : 'fa-solid fa-film'}"></i>
-                                            <span>${j.tip ? j.tip : '电影'}</span>
-                                          </div>
-                                          <div class="treasures_content">
-                                            <span>${j.name ? j.name : '未知'}</span>
-                                            <div>${j.score ? toStar(j.score) : toStar(0)}</div>
-                                          </div>
-                                        </${j.url ? "a" : "div"}>`
-                - result += `${title}${description} <div class="treasures-list">${listResult}</div>`
-            - treasuresPageContent = treasuresPageContent + result
-        != treasuresPageContent
-```
 
